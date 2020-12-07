@@ -2,17 +2,17 @@
 #include <stdlib.h>
 
 int c(const void*a,const void*b){
-  return (*(int*)a-*(int*)b);
+  return (*(double*)a-*(double*)b);
 }
 
 int main(){
   int n;
   scanf("%d",&n);
-  int a[n];
+  double a[n];
   for(int i=0;i<n;i+=1){
-    scanf("%d",a+i);
+    scanf("%lf",a+i);
   }
-  qsort(a,n,sizeof(int),c);
+  qsort(a,n,sizeof(double),c);
   /** start */
   /* for(int i=0;i<n;i+=1){ */
   /*   printf("%d ",a[i]); */
