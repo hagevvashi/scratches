@@ -11,7 +11,6 @@
 #define swap(a, b) { int temp = a; a = b; b = temp; }
 #define lswap(a, b) { ll temp = a; a = b; b = temp; }
 
-
 int n;
 int * data;
 
