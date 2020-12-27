@@ -14,30 +14,21 @@
 int dp[110][10010];
 
 int main() {
-  int N,W;
-  scanf("%d%d",&N,&W);
-
-  int value[N],weight[N];
-  rep(i,N){
-    scanf("%d%d",value+i,weight+i);
-  }
-
-  rep(w,W+1){
-    dp[0][w]=0;
-  }
-
-  rep(i,N){
+  int n,W;
+  scanf("%d%d",&n,&W);
+  int value[n],weight[n];
+  rep(i,n)scanf("%d%d",value+i,weight+i);
+  rep(w,W+1)dp[0][w]=0;
+  rep(i,n){
     rep(w,W+1){
-      int total_weight_up_to_the_last_time = w - weight[i];
-      if (total_weight_up_to_the_last_time >= 0) {
-        dp[i+1][w] = max(dp[i][total_weight_up_to_the_last_time] + value[i], dp[i][w]);
-      } else {
-        dp[i+1][w] = dp[i][w];
+      int total_weight_up_to_the_last_time = w-weight[i];
+      if(total_weight_up_to_the_last_time>=0){
+        dp[i+1][w]=max(dp[i][total_weight_up_to_the_last_time]+value[i],dp[i][w]);
+      }else{
+        dp[i+1][w]=dp[i][w];
       }
     }
   }
-
-  printf("%d\n",dp[N][W]);
-
+  printf("%d\n",dp[n][W]);
   return 0;
 }
