@@ -11,57 +11,60 @@
 #define swap(a, b) { int temp = a; a = b; b = temp; }
 #define lswap(a, b) { ll temp = a; a = b; b = temp; }
 
-int n;
-
 typedef struct {
-  int body;
-  int shisu;
-} Prime;
+  int prime_number;
+  ll exponent;
+} Factor;
 
-Prime prime_list[1010]={{0,0}};
-int cnt=0;
+Factor factors[1010]={{0,0}};
+int factor_count=0;
 
-void h(int x){
-  prime_list[cnt].body=x;
-  prime_list[cnt].shisu+=1;
-  cnt+=1;
+void increment_exponent(i){
+  factors[i].exponent+=1;
 }
 
-void g(int x){
-  if(cnt==0){
-    h(x);
-  }else{
-    if(prime_list[cnt-1].body==x){
-      prime_list[cnt-1].shisu+=1;
-    }else{
-      h(x);
+void add_factor(x){
+  factors[factor_count].prime_number=x;
+  increment_exponent(factor_count);
+  factor_count+=1;
+}
+
+void add_or_increment(int x){
+  for(int i=factor_count-1;i>=0;i-=1){
+    if(factors[i].prime_number==x){
+      increment_exponent(i);
+      return;
     }
   }
+  add_factor(x);
 }
 
-void f(int x){
+void find_smallest_prime_number(int x){
   for(int i=2;i*i<=x;i+=1){
     if(x%i==0){
-      g(i);
-      return f(x/i);
+      add_or_increment(i);
+      return find_smallest_prime_number(x/i);
     }
   }
-  g(x);
+  add_or_increment(x);
 }
 
-void print(){
+void find_prime_factors(int x){
+  find_smallest_prime_number(x);
+}
+
+void print(int n){
   printf("%d:",n);
-  rep(i,cnt){
-    rep(j,prime_list[i].shisu){
-      printf(" %d",prime_list[i].body);
-    }
+  rep(i,factor_count)lrep(j,factors[i].exponent){
+    printf(" %d",factors[i].prime_number);
   }
   puts("");
 }
 
 int main() {
+  int n;
   scanf("%d",&n);
-  f(n);
-  print();
+  find_prime_factors(n);
+  print(n);
   return 0;
 }
