@@ -13,7 +13,7 @@
 
 int n;
 
-typedef struct _Prime {
+typedef struct {
   int body;
   int shisu;
 } Prime;
@@ -21,18 +21,20 @@ typedef struct _Prime {
 Prime prime_list[1010]={{0,0}};
 int cnt=0;
 
+void h(int x){
+  prime_list[cnt].body=x;
+  prime_list[cnt].shisu+=1;
+  cnt+=1;
+}
+
 void g(int x){
   if(cnt==0){
-    prime_list[cnt].body=x;
-    prime_list[cnt].shisu+=1;
-    cnt+=1;
+    h(x);
   }else{
     if(prime_list[cnt-1].body==x){
       prime_list[cnt-1].shisu+=1;
     }else{
-      prime_list[cnt].body=x;
-      prime_list[cnt].shisu+=1;
-      cnt+=1;
+      h(x);
     }
   }
 }
@@ -60,13 +62,6 @@ void print(){
 int main() {
   scanf("%d",&n);
   f(n);
-
-  /* printf("cnt: %d\n",cnt); */
-  /* rep(i,cnt){ */
-  /*   printf("prime_list[i].body: %d\n",prime_list[i].body); */
-  /*   printf("prime_list[i].shisu: %d\n",prime_list[i].shisu); */
-  /* } */
-
   print();
   return 0;
 }
