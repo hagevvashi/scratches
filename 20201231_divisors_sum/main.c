@@ -39,6 +39,7 @@ void add_or_increment(int x){
 }
 
 void find_smallest_prime_factor(int x){
+  if(x<=1)return;
   for(int i=2;i*i<=x;i+=1){
     if(x%i==0){
       add_or_increment(i);
@@ -83,7 +84,8 @@ void debug(){
  * INPUT: n(n>=1,n<1000000000)
  * OUTPUT: sum of divisors of n
  *
- * e.g.
+ * # e.g.
+ * ## 1
  * * INPUT
  * ```
  * 12
@@ -91,6 +93,15 @@ void debug(){
  * * OUTPUT
  * ```
  * 28
+ * ```
+ * ## 2
+ * * INPUT
+ * ```
+ * 1
+ * ```
+ * * OUTPUT
+ * ```
+ * 1
  * ```
  */
 int main() {
