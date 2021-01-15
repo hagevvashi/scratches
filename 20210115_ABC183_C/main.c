@@ -11,29 +11,30 @@
 #define swap(a, b) { int temp = a; a = b; b = temp; }
 #define lswap(a, b) { ll temp = a; a = b; b = temp; }
 
-void reverse(int*p,int cnt){
-  for(int i=0;(i+1)*2<=cnt;i+=1){
-    swap(p[i],p[cnt-i]);
+void reverse(int*a,int n){
+  int l=0,r=n-1;
+  while(l<r){
+    swap(a[l],a[r]);
+    l+=1;
+    r-=1;
   }
 }
 
-int next_permutation(int*p,int cnt){
+int next_permutation(int*p,int n){
   int ret=0;
-  int r=cnt-1;
+  int r=n-1;
   int l=r-1;
   for(;l>=0;l-=1){
-    if(p[l]<p[l+1]){
-      ret=1;
-      break;
-    }
+    if(p[l]<p[l+1])break;
   }
-  for(;r>l;r-=1){
-    if(p[r]>p[l]){
-      break;
+  if(l>=0){
+    ret=1;
+    for(;r>l;r-=1){
+      if(p[r]>p[l])break;
     }
+    swap(p[l],p[r]);
   }
-  swap(p[l],p[r]);
-  reverse(p+l,cnt-l);
+  reverse(p+(l+1),n-(l+1));
   return ret;
 }
 
