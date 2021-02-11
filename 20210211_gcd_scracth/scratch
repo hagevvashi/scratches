@@ -1,0 +1,43 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+;; a==((q*b)+r)
+;;
+;; a>=(b+r)  ;; (q>=1)
+;; (b+r)>=2r ;; (b>=r)
+;;
+;; a>=2r
+;; r<=(a/2)
+;;
+;; r==a%b
+;; a==((q*b)+r)
+;; r==a-(q*b)
+;; gcd(ll a,ll b){
+;;   if(b==0)return a;
+;;   return gcd(b,a%b);
+;; }
+;; d=gcd(a,b)
+;; int x=d/a;
+;; int y=d/b;
+;; a-(q*b)==d*x-(q*d*y)==d*(x-(q*y))
+;; gcd(a-(q*b),b)
+;;   ==gcd(d*x-(q*d*y),d*y)
+;;   ==gcd(d*(x-(q*y)),d*y)
+;;   ==d*gcd(x-(q*y),y)
+;;   ==gcd(a,b)*gcd(x-(q*y),y)
+;;
+;; _a=a-(q*b)
+;; a==_a+(q*b)
+;; _d=gcd(_a,b)
+;; int _x=_d/_a;
+;; int _y=_d/b;
+;; gcd(_a-(q*b),b)
+;;   ==gcd(_d*_x-(q*_d*_y),_d*_y)
+;;   ==gcd(_d*(_x-(q*_y)),_d*_y)
+;;   ==_d*gcd(_x-(q*_y),_y)
+;;   ==gcd(_a,b)*gcd(_x-(q*_y),_y)
+;;   ==gcd(a-(q*b),b)*gcd(_x-(q*_y),_y)
+;;   ==gcd(a,b)*gcd(x-(q*y),y)*gcd(_x-(q*_y),_y)
+
+;; gcd(a,b)==gcd(a-(q*b),b)
+;;
