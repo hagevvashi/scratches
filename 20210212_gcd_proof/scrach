@@ -1,0 +1,28 @@
+;; a=b*q+r;
+;;
+;; d=gcd(a,b)
+;; x=d/a
+;; y=d/b
+;;
+;; r=a-b*q
+;; r=d*x-d*y*q
+;; r=d*(x-y*q)
+;; d|r -> d|(a-b*q)
+;; d|b
+;; d|gcd(a-b*q,b) -> gcd(a,b)|gcd(a-b*q,b)...1
+;;
+;;
+;; _a=a-b*q
+;;
+;; _d=gcd(_a,b)
+;; _x=_d/_a
+;; _y=_d/b
+;;
+;; a=b*q+_a
+;;
+;; a=_d*_y*q+_d*_x
+;; a=_d*(_y*q+_x)
+;; _d|a->_d|b*q+_a
+;; _d|b
+;; _d|gcd(b*q+_a,b) -> gcd(_a,b)|gcd(b*q+_a,b) -> gcd(a-b*q,b)|gcd(a,b)...2
+
