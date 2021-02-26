@@ -1,18 +1,18 @@
 ---
 name: Meeting Agenda
-about: FIXME
+about: meeting agneda template
 title: "TITLE YYYY.MM.DD"
 labels: "mtg"
 assignees: ""
 
 ---
 
-# [会議タイトル]
+# Title of the meeting
 
-## ゴール
+## goal
 
-## アジェンダ
+## agenda
 
-## 会場
+## room
 
 [online meeting url]
