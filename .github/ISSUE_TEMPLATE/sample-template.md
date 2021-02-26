@@ -1,6 +1,6 @@
 ---
 name: Meeting Agenda
-about:
+about: FIXME
 title: "TITLE YYYY.MM.DD"
 labels: "mtg"
 assignees: ""
