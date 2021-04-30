@@ -17,24 +17,25 @@ typedef struct {
   int length;
 } Set;
 
-void insert(int v,Set s){
+void insert(int v,Set*s){
   int d=0;
-  printf("s.length: %d\n",s.length);
+  // printf("s.length: %d\n",s->length);
 
-  rep(i,s.length){
-    printf("i: %d\n",i);
-    printf("s.list[i]: %d\n",s.list[i]);
-    if(s.list[i]==v){
+  rep(i,s->length){
+    // printf("i: %d\n",i);
+    // printf("s.list[i]: %d\n",s->list[i]);
+    if(s->list[i]==v){
       d=1;
       break;
     }
   }
-  printf("v: %d\n",v);
-  printf("d: %d\n",d);
-  puts("");
+  // printf("v: %d\n",v);
+  // printf("d: %d\n",d);
+  // puts("");
   if(d==0){
-    s.list[s.length]=v;
-    s.length+=1;
+    // puts("d==0");
+    s->list[s->length]=v;
+    s->length+=1;
   }
 }
 
@@ -53,8 +54,8 @@ int main() {
     rep(i,n){
       if((j>>i)&1)sum+=a[i];
     }
-    insert(sum,s);
-    printf("s.length: %d\n",s.length);
+    insert(sum,&s);
+    // printf("s.length: %d\n",s.length);
   }
   printf("%d\n",s.length);
   return 0;
