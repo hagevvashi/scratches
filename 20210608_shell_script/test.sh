@@ -5,4 +5,4 @@ function test() {
   echo $TEST
 }
 
-
+test | grep foo
