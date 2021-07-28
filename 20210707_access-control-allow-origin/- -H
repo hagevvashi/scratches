@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Server: openresty
+Date: Thu, 08 Jul 2021 14:04:43 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+X-Frame-Options: SAMEORIGIN
+ETag: W/"ea9a14baff8b71d69d78b3756b4541ca"
+Cache-Control: max-age=0
+Set-Cookie: _tabelog_session_id=f96ff571a5d59456eb0516b5a99abc86; domain=d047.d-tblg.k-dev.in; path=/; expires=Thu, 08 Jul 2021 20:04:43 -0000; secure; HttpOnly
+Set-Cookie: mo_r=b8943e32730719e29b44731da70e76d4; domain=d047.d-tblg.k-dev.in; path=/; secure; HttpOnly
+Set-Cookie: ma_k=a5c2ca820af6b7619d3191f8046b27d9; domain=d047.d-tblg.k-dev.in; path=/; expires=Mon, 08 Jul 2041 14:04:43 -0000; secure; HttpOnly
+Set-Cookie: do_i=212dc81a4952b7a9e8d8d79654811786; domain=d047.d-tblg.k-dev.in; path=/; expires=Mon, 08 Jul 2041 14:04:43 -0000; secure
+X-AP-Server-Name: d-tb-d047
+X-Rails-Subsystem: smartphone
+X-Rails-Controller: smartphone/sample
+X-Rails-Action: foo
+X-Ruby-Version: 2.6.6
+X-Rails-Version: 5.2.2.1
+X-User-Ident: f96ff571a5d59456eb0516b5a99abc86
+X-Request-Id: 1a58ece5-8e7c-4fa5-bc3a-ab83f79c1909
+X-Runtime: 0.388002
+Vary: Accept-Encoding,User-Agent
+Expires: Thu, 08 Jul 2021 14:04:43 GMT
+
